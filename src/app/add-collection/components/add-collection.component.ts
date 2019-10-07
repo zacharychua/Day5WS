@@ -11,13 +11,13 @@ import {Vinyl} from '../models';
 export class AddCollectionComponent implements OnInit {
 
   @Output() addToCollectionList;
-  //@Output() expandChange;
+  @Output() expandChange;
 
-  //@Input() toggle;
+  @Input() expand;
 
   constructor() { 
     this.addToCollectionList = new EventEmitter<Vinyl>();
-    //this.expandChange = new EventEmitter<boolean>();
+    this.expandChange = new EventEmitter<number>();
   }
 
   ngOnInit() {
@@ -38,13 +38,11 @@ export class AddCollectionComponent implements OnInit {
       this.addToCollectionList.emit(collection);
       form.resetForm();
   }
-/*
-  onExpandChange(expanded: boolean){
+
+  onExpand(expanded: number){
     console.info(expanded);
-    if(expanded){
-      this.expandChange.emit(expanded);
-    }
+    if(expanded)
+    this.expandChange.emit(1);
   }
-  */
 
 }

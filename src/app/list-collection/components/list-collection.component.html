@@ -1,5 +1,5 @@
 <mat-accordion>
-        <mat-expansion-panel>
+        <mat-expansion-panel #panel [expanded]="expand" (afterExpand)="onExpand(panel.expanded)">
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     View Collection

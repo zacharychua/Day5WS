@@ -9,8 +9,8 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 export class ListCollectionComponent implements OnInit {
 
   @Input() newItem;
-  //@Input() toggle;
-  //@Output() expandChange;
+  @Input() expand;
+  @Output() expandChange;
 
   private ngNavigatorShareService: NgNavigatorShareService;
 
@@ -19,7 +19,7 @@ export class ListCollectionComponent implements OnInit {
 
   constructor(ngNavigatorShareService: NgNavigatorShareService) {
     this.itemList=[];
-    //this.expandChange = new EventEmitter<boolean>();
+    this.expandChange = new EventEmitter<number>();
     this.ngNavigatorShareService = ngNavigatorShareService;
    }
 
@@ -34,13 +34,12 @@ export class ListCollectionComponent implements OnInit {
       }
     }
   }
-/*
-  onExpandChange(expanded: boolean){
+
+  onExpand(expanded: number){
     console.info(expanded);
-    if(expanded){
-      this.expandChange.emit(expanded);
-    } 
-  }*/
+    if(expanded) this.expandChange.emit(0);
+  }
+
 
   share(){
     this.ngNavigatorShareService.share({

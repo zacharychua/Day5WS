@@ -1,5 +1,5 @@
 <div>
-    <mat-toolbar>Vinyl Collection</mat-toolbar>
-    <app-add-collection (addToCollectionList)="addToCollection($event)"></app-add-collection>
-    <app-list-collection [newItem]="newItem"></app-list-collection>
+    <mat-toolbar color="primary">Vinyl Collection</mat-toolbar>
+    <app-add-collection (addToCollectionList)="addToCollection($event)" (expandChange)="toggleChange($event)" [expand]="expand_add_collection"></app-add-collection>
+<app-list-collection [newItem]="newItem" (expandChange)="toggleChange($event)" [expand]="expand_list_collection"></app-list-collection>
 </div>
