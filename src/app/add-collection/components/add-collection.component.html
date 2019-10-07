@@ -1,0 +1,27 @@
+<form #newCol="ngForm" (ngSubmit)="addToCollection(newCol)">
+    <div>
+        <label for="album_name">Album Name</label>
+        <input type="text" id="album_name" name="album_name" placeholder="Album Name" ngModel />
+    </div>
+    <div>
+        <label for="artist">Artist</label>
+        <input type="text" id="artist" name="artist" placeholder="Artist Name" ngModel />
+    </div>
+    <div>
+        <label for="rating">Rating</label>
+        <input type="number" id="rating" name="rating" min="1" max="10" step="1" ngModel />
+    </div>
+    <div>
+        <label for="album_img">Album Image's URL</label>
+        <input type="text" id="album_img" name="album_img" placeholder="Album Image's URL" ngModel />
+    </div>
+    <div>
+
+        <label for="album_video">Album Video's URL</label>
+        <input type="text" id="album_video" name="album_video" placeholder="Album Video's URL" ngModel />
+    </div>
+    <div>
+        <button type="submit">Add To Collection</button>
+        <button type="clear">Clear</button>
+    </div>
+</form>
