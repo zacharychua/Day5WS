@@ -1,27 +1,39 @@
-<form #newCol="ngForm" (ngSubmit)="addToCollection(newCol)">
-    <div>
+<form #newCol="ngForm" (ngSubmit)="addToCollection(newCol)" fxLayout="column" fxLayoutGap="3vh">
+    <div fxLayout="column">
         <label for="album_name">Album Name</label>
-        <input type="text" id="album_name" name="album_name" placeholder="Album Name" ngModel />
+        <mat-form-field>
+            <input matInput name="album_name" placeholder="Album Name" ngModel>
+        </mat-form-field>
     </div>
-    <div>
+    <div fxLayout="column">
         <label for="artist">Artist</label>
-        <input type="text" id="artist" name="artist" placeholder="Artist Name" ngModel />
+        <mat-form-field>
+            <input matInput type="text" id="artist" name="artist" placeholder="Artist's Name" ngModel />
+        </mat-form-field>
     </div>
-    <div>
+    <div fxLayout="column">
         <label for="rating">Rating</label>
-        <input type="number" id="rating" name="rating" min="1" max="10" step="1" ngModel />
+        <div>
+            <mat-slider #slider id="rating" name="rating" max="10" min="1" step="1" ngModel></mat-slider>
+            {{slider.value}}
+        </div>
     </div>
-    <div>
+    <div fxLayout="column">
         <label for="album_img">Album Image's URL</label>
-        <input type="text" id="album_img" name="album_img" placeholder="Album Image's URL" ngModel />
-    </div>
-    <div>
+        <mat-form-field>
+            <input matInput type="text" id="album_img" name="album_img" placeholder="Album Image's URL" ngModel />
+        </mat-form-field>
 
-        <label for="album_video">Album Video's URL</label>
-        <input type="text" id="album_video" name="album_video" placeholder="Album Video's URL" ngModel />
     </div>
-    <div>
-        <button type="submit">Add To Collection</button>
-        <button type="clear">Clear</button>
+    <div fxLayout="column">
+        <label for="album_video">Album Video's URL</label>
+        <mat-form-field>
+            <input matInput type="text" id="album_video" name="album_video" placeholder="Album Video's URL" ngModel />
+        </mat-form-field>
+
+    </div>
+    <div fxLayout="row">
+        <button mat-button color="primary" type="submit">Add To Collection</button>
+        <button mat-button color="primary" type="reset">Clear</button>
     </div>
 </form>
