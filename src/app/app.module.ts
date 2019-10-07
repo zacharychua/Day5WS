@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {AddCollectionModule} from './add-collection/add-collection.module';
 import {ListCollectionModule} from './list-collection/list-collection.module';
+import {RequiredModule} from './project_required.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {ListCollectionModule} from './list-collection/list-collection.module';
     BrowserModule,
     BrowserAnimationsModule,
     AddCollectionModule,
-    ListCollectionModule
+    ListCollectionModule,
+    RequiredModule
   ],
   providers: [],
   bootstrap: [AppComponent]
