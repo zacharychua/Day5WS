@@ -3,5 +3,5 @@ export interface Vinyl {
     artist: string;
     rating: number;
     album_img: string;
-    album_video: string;
+    album_desc: string;
 }

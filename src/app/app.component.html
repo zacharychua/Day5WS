@@ -1,3 +1,4 @@
 <div>
-    <app-add-collection></app-add-collection>
+    <app-add-collection (addToCollectionList)="addToCollection($event)"></app-add-collection>
+    <app-list-collection [newItem]="newItem"></app-list-collection>
 </div>

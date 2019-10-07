@@ -1,39 +1,51 @@
-<form #newCol="ngForm" (ngSubmit)="addToCollection(newCol)" fxLayout="column" fxLayoutGap="3vh">
-    <div fxLayout="column">
-        <label for="album_name">Album Name</label>
-        <mat-form-field>
-            <input matInput name="album_name" placeholder="Album Name" ngModel>
-        </mat-form-field>
-    </div>
-    <div fxLayout="column">
-        <label for="artist">Artist</label>
-        <mat-form-field>
-            <input matInput type="text" id="artist" name="artist" placeholder="Artist's Name" ngModel />
-        </mat-form-field>
-    </div>
-    <div fxLayout="column">
-        <label for="rating">Rating</label>
-        <div>
-            <mat-slider #slider id="rating" name="rating" max="10" min="1" step="1" ngModel></mat-slider>
-            {{slider.value}}
-        </div>
-    </div>
-    <div fxLayout="column">
-        <label for="album_img">Album Image's URL</label>
-        <mat-form-field>
-            <input matInput type="text" id="album_img" name="album_img" placeholder="Album Image's URL" ngModel />
-        </mat-form-field>
-
-    </div>
-    <div fxLayout="column">
-        <label for="album_video">Album Video's URL</label>
-        <mat-form-field>
-            <input matInput type="text" id="album_video" name="album_video" placeholder="Album Video's URL" ngModel />
-        </mat-form-field>
-
-    </div>
-    <div fxLayout="row">
-        <button mat-button color="primary" type="submit">Add To Collection</button>
-        <button mat-button color="primary" type="reset">Clear</button>
-    </div>
-</form>
+<mat-accordion>
+        <mat-expansion-panel #panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Add a Vinyl
+                </mat-panel-title>
+                <mat-panel-description>
+                    Click here to add a new Vinyl
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <form #newCol="ngForm" (ngSubmit)="addToCollection(newCol)" fxLayout="column" fxLayoutGap="3vh">
+                    <div fxLayout="column">
+                        <label for="album_name">Album Name</label>
+                        <mat-form-field>
+                            <input matInput name="album_name" placeholder="Album Name" ngModel>
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="column">
+                        <label for="artist">Artist</label>
+                        <mat-form-field>
+                            <input matInput type="text" id="artist" name="artist" placeholder="Artist's Name" ngModel />
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="column">
+                        <label for="rating">Rating</label>
+                        <div>
+                            <mat-slider #slider id="rating" name="rating" max="10" min="1" step="1" ngModel></mat-slider>
+                            {{slider.value}}
+                        </div>
+                    </div>
+                    <div fxLayout="column">
+                        <label for="album_img">Album Image's URL</label>
+                        <mat-form-field>
+                            <input matInput type="text" id="album_img" name="album_img" placeholder="Album Image's URL" ngModel />
+                        </mat-form-field>
+                
+                    </div>
+                    <div fxLayout="column">
+                        <label for="album_desc">Album's Description</label>
+                        <mat-form-field>
+                            <textarea matInput id="album_desc" name="album_desc" placeholder="Album's Description'" ngModel></textarea>
+                        </mat-form-field>
+                
+                    </div>
+                    <div fxLayout="row">
+                        <button mat-button color="primary" type="submit">Add To Collection</button>
+                        <button mat-button color="primary" type="reset">Clear</button>
+                    </div>
+                </form>
+        </mat-expansion-panel>
+    </mat-accordion>

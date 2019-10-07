@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import {NgForm} from '@angular/forms';
 
 import {Vinyl} from '../models';
@@ -10,8 +10,15 @@ import {Vinyl} from '../models';
 })
 export class AddCollectionComponent implements OnInit {
 
-  
-  constructor() { }
+  @Output() addToCollectionList;
+  //@Output() expandChange;
+
+  //@Input() toggle;
+
+  constructor() { 
+    this.addToCollectionList = new EventEmitter<Vinyl>();
+    //this.expandChange = new EventEmitter<boolean>();
+  }
 
   ngOnInit() {
   }
@@ -24,10 +31,20 @@ export class AddCollectionComponent implements OnInit {
       artist: form_value.artist,
       rating: form_value.rating,
       album_img: form_value.album_img,
-      album_video: form_value.album_video
+      album_desc: form_value.album_desc
     };
       console.info(collection);
-    
 
+      this.addToCollectionList.emit(collection);
+      form.resetForm();
   }
+/*
+  onExpandChange(expanded: boolean){
+    console.info(expanded);
+    if(expanded){
+      this.expandChange.emit(expanded);
+    }
+  }
+  */
+
 }
